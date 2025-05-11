@@ -14,21 +14,27 @@
       padding: 0;
       overflow: hidden;
       position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
     }
 
     h1 {
-      font-size: 4em;
+      font-size: 3em;
       color: #d63384;
       margin-top: 20px;
       animation: fadeIn 2s ease-out;
+      text-align: center;
     }
 
     p.main-message {
-      font-size: 1.5em;
+      font-size: 1.2em;
       color: #555;
       line-height: 1.6;
-      margin-top: 30px;
-      margin-bottom: 50px;
+      margin-top: 20px;
+      margin-bottom: 20px;
       animation: fadeIn 3s ease-out;
     }
 
@@ -36,8 +42,9 @@
       font-size: 1.2em;
       color: #555;
       margin-top: 30px;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       font-weight: bold;
+      animation: fadeIn 4s ease-out;
     }
 
     .photo {
@@ -54,7 +61,7 @@
     }
 
     .music-button {
-      margin-top: 40px;
+      margin-top: 30px;
       background: #d63384;
       color: white;
       border: none;
@@ -67,6 +74,17 @@
 
     .music-button:hover {
       background: #b02a69;
+    }
+
+    .audio-player {
+      margin-top: 20px;
+      padding: 10px;
+      background: #f9e1e6;
+      border-radius: 12px;
+      display: inline-block;
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
     }
 
     @keyframes fadeIn {
@@ -93,11 +111,11 @@
     /* Responsive Design for smaller screens */
     @media (max-width: 600px) {
       h1 {
-        font-size: 3em;
+        font-size: 2.5em;
       }
 
       p.main-message {
-        font-size: 1.2em;
+        font-size: 1em;
       }
 
       .photo img {
@@ -122,9 +140,18 @@
     Hayatımın geri kalanında, her Anneler Günü'nü seninle beraber kutlamak dileğiyle... 💖
   </p>
 
-  <button class="music-button" onclick="playMusic()">🎶 Müzik Çalsın</button>
+  <!-- YouTube Video Ekleme -->
+  <div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/cv1naUa3_3g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
 
-  <audio id="music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+  <div class="audio-player">
+    <button class="music-button" onclick="playMusic()">🎶 Müzik Çalsın</button>
+    <audio id="music" controls>
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
 
   <script>
     function playMusic() {
