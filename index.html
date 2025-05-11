@@ -69,91 +69,60 @@
       font-size: 1.2em;
       border-radius: 8px;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background 0.3s ease;
     }
 
     .music-button:hover {
-      background: #b02a69;
-    }
-
-    .audio-player {
-      margin-top: 20px;
-      padding: 10px;
-      background: #f9e1e6;
-      border-radius: 12px;
-      display: inline-block;
-      width: 100%;
-      max-width: 600px;
-      text-align: center;
+      background: #e50070;
     }
 
     @keyframes fadeIn {
-      0% {
+      from {
         opacity: 0;
       }
-      100% {
+      to {
         opacity: 1;
       }
     }
 
     @keyframes moveImage {
       0% {
-        transform: scale(1);
+        transform: translateY(-10px);
       }
       50% {
-        transform: scale(1.05);
+        transform: translateY(10px);
       }
       100% {
-        transform: scale(1);
-      }
-    }
-
-    /* Responsive Design for smaller screens */
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.5em;
-      }
-
-      p.main-message {
-        font-size: 1em;
-      }
-
-      .photo img {
-        width: 80%;
+        transform: translateY(-10px);
       }
     }
   </style>
 </head>
 <body>
-
   <h1>Anneler Günü Kutlu Olsun ❤️</h1>
-
-  <p class="main-message"> 
-    Bu özel günde, seni sevmenin, her anını seninle geçirebilmenin ne kadar kıymetli olduğunu bir kez daha anlıyorum. 💐
-  </p>
+  <p class="main-message">Senin gibi bir kadının çok iyi bir anne olacağına eminim. 💐</p>
 
   <div class="photo">
-    <img src="https://github.com/Colandorc/gulgunannelergunuu/blob/main/gulgunyeni.jpeg?raw=true" alt="Anneler Günü Fotoğrafı">
+    <img src="https://github.com/Colandorc/gulgunannelergunuu/raw/main/assets/gulgunyeni.jpeg" alt="Anne ve Kız Fotoğrafı">
   </div>
 
-  <p class="footer-message">
-    Hayatımın geri kalanında, her Anneler Günü'nü seninle beraber kutlamak dileğiyle... 💖
-  </p>
+  <p class="footer-message">Hayatımın geri kalanında her Anneler Günü'nü seninle beraber kutlamak dileğiyle... ❤️</p>
 
-  <!-- Müzik Kutusu -->
-  <div class="audio-player">
-    <button class="music-button" onclick="playMusic()">🎶 Müzik Çalsın</button>
-    <audio id="music" controls>
-      <source src="https://www.bensound.com/royalty-free-music/track/happy" type="audio/mp3">
-      Your browser does not support the audio element.
-    </audio>
-  </div>
+  <button class="music-button" onclick="playMusic()">🎶 Müzik Çalsın</button>
+  <audio id="music">
+    <source src="https://github.com/Colandorc/gulgunannelergunuu/raw/main/assets/run.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
 
   <script>
     function playMusic() {
-      document.getElementById('music').play();
+      var music = document.getElementById('music');
+      if (music.paused) {
+        music.play();
+      } else {
+        music.pause();
+      }
     }
   </script>
-
 </body>
 </html>
