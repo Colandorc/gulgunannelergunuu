@@ -9,24 +9,22 @@
       font-family: 'Segoe UI', sans-serif;
       background-color: #f0e1e6;
       color: #333;
-      text-align: center;
       margin: 0;
       padding: 0;
-      overflow: hidden;
-      position: relative;
+      overflow-x: hidden;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      flex-direction: column;
+      height: 100%;
+      text-align: center;
     }
 
     h1 {
-      font-size: 3em;
+      font-size: 2.5em;
       color: #d63384;
       margin-top: 20px;
       animation: fadeIn 2s ease-out;
-      text-align: center;
     }
 
     p.main-message {
@@ -36,6 +34,7 @@
       margin-top: 20px;
       margin-bottom: 20px;
       animation: fadeIn 3s ease-out;
+      padding: 0 10px;
     }
 
     p.footer-message {
@@ -45,12 +44,15 @@
       margin-bottom: 20px;
       font-weight: bold;
       animation: fadeIn 4s ease-out;
+      padding: 0 10px;
     }
 
     .photo {
       position: relative;
       animation: fadeIn 3s ease-out;
-      margin-bottom: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
     }
 
     .photo img {
@@ -95,42 +97,20 @@
       }
     }
 
-    /* Responsive adjustments */
-    @media screen and (max-width: 768px) {
-      h1 {
-        font-size: 2.5em;
-      }
-
-      p.main-message, p.footer-message {
-        font-size: 1em;
-      }
-
-      .photo img {
-        max-width: 90%;
-      }
-
-      .music-button {
-        font-size: 1em;
-        padding: 8px 16px;
-      }
-    }
-
-    @media screen and (max-width: 480px) {
+    /* Mobil uyumlu */
+    @media (max-width: 768px) {
       h1 {
         font-size: 2em;
       }
-
       p.main-message, p.footer-message {
-        font-size: 0.9em;
+        font-size: 1em;
       }
-
       .photo img {
-        max-width: 100%;
+        max-width: 90%;
       }
-
       .music-button {
-        font-size: 0.9em;
-        padding: 8px 15px;
+        font-size: 1em;
+        padding: 8px 16px;
       }
     }
   </style>
@@ -140,7 +120,6 @@
   <p class="main-message">Bu özel günde, seni sevmenin, her anını seninle geçirebilmenin ne kadar kıymetli olduğunu bir kez daha anlıyorum. 💐 💐</p>
 
   <div class="photo">
-    <!-- Fotoğrafı doğru şekilde ekledim ve yazıyı kaldırdım -->
     <img src="https://github.com/Colandorc/gulgunannelergunuu/raw/main/gulgunyeni.jpeg" alt="">
   </div>
 
